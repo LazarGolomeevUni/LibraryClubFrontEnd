@@ -1,0 +1,59 @@
+.blocks-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* allow as many blocks in a row as the width of the page allows */
+  grid-gap: 20px; /* add gap between the blocks */
+  list-style: none;
+  padding: 1%;
+  max-width: 1200px; /* set a maximum width for the block list */
+  margin: 0 auto;
+}
+
+.blocks-item {
+  border: 3px solid; /* add colored frame */
+  border-radius: 15px; /* add soft edges */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 400px; /* set a maximum height for the block items */
+  overflow: hidden; /* hide overflowing content */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.479); /* add a subtle box shadow */
+  border-width: 0.2cm;
+}
+
+.blocks-item-title {
+  font-size: 26px;
+  text-align: center; /* center the title */
+}
+
+.blocks-item-description {
+  font-size: 18px;
+  text-align: center; /* center the description */
+}
+
+
+.blocks-item:nth-child(3n) {
+  margin-right: 0; /* remove margin on the last block of each row */
+}
+
+.blocks-item-title {
+  font-size: 26px;
+  text-align: center; /* center the title */
+}
+
+.blocks-item-description {
+  font-size: 18px;
+  text-align: center; /* center the description */
+  padding: 1%
+}
+
+@media screen and (max-width: 768px) {
+  .blocks-item {
+    transform: scale(0.8); /* scale block items down on smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blocks-item {
+    transform: scale(0.7); /* scale block items down even further on smaller screens */
+  }
+}

@@ -1,0 +1,19 @@
+.blinds-container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blinds-slider {
+    max-width: 600px;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .blinds-slider {
+        max-width: 200px;
+        z-index: 1;
+    }
+}

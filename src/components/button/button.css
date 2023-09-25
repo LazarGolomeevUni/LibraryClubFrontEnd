@@ -1,0 +1,34 @@
+.styled-button {
+    font-size: 15px;
+    color: #1a53ff;
+    background-color: #fef7e5;
+    border-color: #1a53ff;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.styled-button:hover {
+    color: #fef7e5;
+    background-color: #1a53ff;
+    border-color: #fef7e5;
+    cursor: pointer;
+}
+
+.styled-button:active {
+    background-color: #ff3300;
+}
+
+@media (max-width: 600px) {
+    .styled-button:hover {
+        font-size: 15px;
+        color: #1a53ff;
+        background-color: #fef7e5;
+        border-color: #1a53ff;
+        border-radius: 12px;
+        height: 40px;
+        width: 150px;
+    }
+    .styled-button:active {
+        background-color: #ff3300;
+    }
+}
