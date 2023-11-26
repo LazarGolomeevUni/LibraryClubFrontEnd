@@ -4,8 +4,9 @@ const navigation = {
     brand: { name: "Home", to: "/" },
     links: [
         { name: "Home", to: "/" },
-        { name: "Room Control", to: "/roomcontrol" },
-        { name: "Manage Users and Permissions", to: "/management" },
+        {name: "Create", to: "/create"},
+        // { name: "Room Control", to: "/roomcontrol" },
+        // { name: "Manage Users and Permissions", to: "/management" },
         { name: "About", to: "/about" },
         { name: "Help", to: "/help" },
 

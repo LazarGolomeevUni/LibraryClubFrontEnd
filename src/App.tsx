@@ -11,6 +11,8 @@ import About from './pages/about-page/about-page';
 import { AuthContextProvider } from './components/AuthContext/AuthContext';
 import Layout from './components/Layout/layout';
 import VitalityPassport from './pages/vitality-passport-page/vitality-passport-page';
+import Registration from './pages/registration-page/registration-page';
+import Create from './pages/creation-page/create-page';
 
 
 // const navigation = {
@@ -39,10 +41,11 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="help" element={<Help />} />
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Registration />}></Route>
             <Route path="roomcontrol" element={<RoomControl />} />
             
             <Route path="/passport" element={<VitalityPassport />}></Route>
-            <Route path="management" element={<Management />} />
+            <Route path="/create" element={<Create />} />
             {/* <Route index element={<Login />} /> */}
             {/* <PrivateRoute path="/" element={<Navbar brand={brand} links={links} />} />
         <PrivateRoute path="/" isAuthenticated={isAuthenticated} component={Home} /> */}

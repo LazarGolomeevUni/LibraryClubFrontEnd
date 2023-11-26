@@ -40,7 +40,6 @@ const PopUp = (props: {
                     <button
                         className="button"
                         onClick={() => {
-                            console.log('modal closed ');
                             close();
                         }}
                     >

@@ -9,26 +9,26 @@
 
 .styled-button:hover {
     color: #fef7e5;
-    background-color: #1a53ff;
+    background-color: #ffbb33;
     border-color: #fef7e5;
     cursor: pointer;
 }
 
 .styled-button:active {
-    background-color: #ff3300;
+    background-color: #cc8800;
 }
 
 @media (max-width: 600px) {
     .styled-button:hover {
         font-size: 15px;
-        color: #1a53ff;
+        color: #ffbb33;
         background-color: #fef7e5;
-        border-color: #1a53ff;
+        border-color: #ffbb33;
         border-radius: 12px;
         height: 40px;
         width: 150px;
     }
     .styled-button:active {
-        background-color: #ff3300;
+        background-color: #cc8800;
     }
 }
