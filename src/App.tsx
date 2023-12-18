@@ -13,6 +13,7 @@ import Layout from './components/Layout/layout';
 import VitalityPassport from './pages/vitality-passport-page/vitality-passport-page';
 import Registration from './pages/registration-page/registration-page';
 import Create from './pages/creation-page/create-page';
+import Moderator from './pages/moderator-page/moderator-page';
 
 
 // const navigation = {
@@ -43,6 +44,8 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Registration />}></Route>
             <Route path="roomcontrol" element={<RoomControl />} />
+            
+            <Route path="moderator" element={<Moderator/>} />
             
             <Route path="/passport" element={<VitalityPassport />}></Route>
             <Route path="/create" element={<Create />} />

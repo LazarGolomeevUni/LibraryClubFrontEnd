@@ -70,6 +70,7 @@ const Navbar = (props: {
                     <div className={`nav-elements  ${showNavbar && "active"}`}>
                         <ul>
                             {user && <NavLinks />}
+                            {user?.role == "moderator" && <li><Link to="/moderator">Moderate</Link></li>}
                             {user && <Link to="/passport">{user?.username}</Link>}
                             {!user && (
                                 <ul>

@@ -4,6 +4,8 @@ import Post from '../../components/post/post';
 import axios from 'axios';
 import './home-page.css';
 import AuthContext from '../../components/AuthContext/AuthContext';
+import PopUp from '../../components/pop-up/pop-up';
+import Button from '../../components/button/button';
 
 type Post = {
     id: number;
@@ -19,6 +21,9 @@ type Post = {
 const Home = () => {
     const [posts, setPosts] = useState<Post[]>([]);
     const { accessToken } =useContext(AuthContext) ?? {};
+    const handleReview = () => {
+        console.log("REVIEW")
+    }
     
 
     useEffect(() => {
@@ -49,7 +54,7 @@ const Home = () => {
     return (
         <div id='home-page-container'>
             {posts.map((post) => (
-                <Post key={post.id} post={post}/> // Spread the post props to the Post component
+                <Post key={post.id} post={post} ><PopUp trigger={<Button id="post-button">Review</Button>} /></Post> // Spread the post props to the Post component
             ))}
         </div>
     );

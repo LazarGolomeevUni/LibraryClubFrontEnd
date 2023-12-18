@@ -2,21 +2,25 @@ import Button from "../button/button";
 import "./post.css";
 import React, { useState } from 'react'
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    children: React.ReactNode;
+interface PostProps {
+    post: {
+        title: string;
+        text: string;
+    };
+    children?: React.ReactNode; // Make children optional if not always passed
 }
-// add { children, ...attributes }: Props
-const Post = (post: any) => {
-    console.log(post);
+
+// Deconstruct props correctly
+const Post = ({ post, children }: PostProps) => {
     return (
         <div className="post-contaier">
             <div className="profile-image"></div>
             <div className="post-content">
                 <div >
-                    <div className="post-header"><h1>{post.post.title}</h1></div>
-                    <div className="post-text"><p>{post.post.text}</p></div>
+                    <div className="post-header"><h1>{post.title}</h1></div>
+                    <div className="post-text"><p>{post.text}</p></div>
                 </div>
-                <Button id="post-button">Review</Button>
+                {children}
             </div>
         </div>
     );
