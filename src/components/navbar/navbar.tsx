@@ -75,7 +75,7 @@ const Navbar = (props: {
                             {!user && (
                                 <ul>
                                     <li><Link to="/login">Login</Link></li>
-                                    <li><Link to="/register">This is a change</Link></li>
+                                    <li><Link to="/register">Register</Link></li>
                                 </ul>
                             )}
                         </ul>
