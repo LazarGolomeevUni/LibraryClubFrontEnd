@@ -31,7 +31,7 @@ const Create = () => {
             text
         }
         try {
-            const response = await axios.post("http://localhost:8000/posts/messaging", body, {
+            const response = await axios.post("http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/posts/messaging", body, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${accessToken}`

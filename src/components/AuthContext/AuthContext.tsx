@@ -53,7 +53,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const navigate = useNavigate();
   const login = async (payload: UserInformation) => {
     const expiryTime = new Date().getTime() + 300000;
-    let apiResponse = await axios.post("http://localhost:8000/authentication/login", payload);
+    let apiResponse = await axios.post("http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/authentication/login", payload);
     // let apiResponse = await axios.get("http://localhost:8090/accounts/me", {
     //   withCredentials: true,
     // });

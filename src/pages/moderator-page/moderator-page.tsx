@@ -35,7 +35,7 @@ const Moderator: React.FC = () => {
     console.log(posts)
     console.log(posts[0].id)
     console.log("body", body)
-    const response = await axios.post("http://localhost:8000/moderator", body, {
+    const response = await axios.post("http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/moderator", body, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${accessToken}`
@@ -49,7 +49,7 @@ const Moderator: React.FC = () => {
       try {
         const response = await axios({
           method: 'get',
-          url: 'http://localhost:8000/moderator/queue',
+          url: 'http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/moderator/queue',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${accessToken}`

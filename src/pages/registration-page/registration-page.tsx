@@ -34,7 +34,7 @@ const Registration = () => {
             age: age,
             consent: 1
         };
-        let apiResponse = await axios.post("http://localhost:8000/authentication/register", payload);
+        let apiResponse = await axios.post("http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/authentication/register", payload);
         console.log(apiResponse)
     };
 
