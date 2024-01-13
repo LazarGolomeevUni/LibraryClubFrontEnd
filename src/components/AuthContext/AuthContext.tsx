@@ -52,14 +52,12 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   let decodedToken: unknown;
   const navigate = useNavigate();
   const login = async (payload: UserInformation) => {
-    console.log("Payload", payload)
     const expiryTime = new Date().getTime() + 300000;
     let apiResponse = await axios.post("http://localhost:8000/authentication/login", payload);
     // let apiResponse = await axios.get("http://localhost:8090/accounts/me", {
     //   withCredentials: true,
     // });
-    //const data = JSON.parse(apiResponse.data) 
-    console.log("API response", apiResponse.data)
+    //const data = JSON.parse(apiResponse.data)
     const accessTokenAndExpiration = {
       accessToken: apiResponse.data.accessToken,
       expiryTime: expiryTime
@@ -71,14 +69,11 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     if (token) {
       const tokenObject = JSON.parse(token);
       decodedToken = jwtDecode(tokenObject.accessToken)
-      console.log("Dec")
     }
 
-    console.log("Decoded token",decodedToken);
     setAccessToken(apiResponse.data.accessToken)
 
     setUser(decodedToken as UserProfile);
-    console.log("This is user", user)
     navigate("/");
   };
   return (

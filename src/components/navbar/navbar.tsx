@@ -14,7 +14,6 @@ const Navbar = (props: {
     const { brand, links } = props;
     const [showNavbar, setShowNavbar] = useState(false);
     const { user, setUser ,setAccessToken} = useContext(AuthContext) ?? {};
-    console.log("This is user", user)
 
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar);
