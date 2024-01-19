@@ -25,7 +25,23 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Upload to S3
+      - name: Upload to Staging
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read
+        env:
+          SOURCE_DIR: build/
+          AWS_S3_BUCKET: ${{ secrets.AWS_STAGING_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      - name: Run Playwright Tests on Staging
+        run: npx playwright test
+
+      - name: Upload to Prod
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read
@@ -35,16 +51,16 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  e2e-tests:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install
-      - name: Install Playwright browsers
-        run: npx playwright install
-      - name: Run Playwright Tests
-        run: npx playwright test
+  # e2e-tests:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '14'
+  #     - run: npm install
+  #     - name: Install Playwright browsers
+  #       run: npx playwright install
+  #     - name: Run Playwright Tests
+  #       run: npx playwright test
