@@ -33,14 +33,20 @@ const VitalityPassport: React.FC = () => {
           'Authorization': `Bearer ${accessToken}`
         }
       });
-      const responseAuth = await axios({
-        method: 'delete',
-        url: 'http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/authentication/delete',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
-        }
-      });
+      if(responsePosts){
+        const responseAuth = await axios({
+          method: 'delete',
+          url: 'http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/authentication/delete',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
+          },
+          data: {
+            userId: `${user?.id}`,
+          }
+        });
+      }
+      
       
     } catch (error) {
       console.log("There was an error deleting your account");
