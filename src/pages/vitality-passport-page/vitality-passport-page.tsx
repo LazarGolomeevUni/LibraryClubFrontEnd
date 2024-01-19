@@ -49,7 +49,7 @@ const VitalityPassport: React.FC = () => {
       //   console.log(responseAuth);
       // }
       
-      const apiResponse = await axios.delete("http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/authentication/login",{
+      const apiResponse = await axios.delete("http://a4f6578b7b9884b57afd42efde583b01-1167281825.eu-north-1.elb.amazonaws.com:8000/authentication/delete",{
         data: {
           id: user?.id
         }
