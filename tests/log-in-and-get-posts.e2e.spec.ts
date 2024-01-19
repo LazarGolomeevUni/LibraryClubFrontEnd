@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test("User Logs in and sees Posts on Homepage", async ({ page }) => {
   await page.goto(
-    "http://tlcstaging.s3-website.eu-north-1.amazonaws.com"
+    "http://the-library-club-s3.s3-website.eu-north-1.amazonaws.com"
   );
   await page.waitForSelector(".navbar", { state: "visible" });
   await page.click("text=Login");
